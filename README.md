@@ -13,7 +13,7 @@ Send [NIP-61](https://github.com/nostr-protocol/nips/blob/master/61.md) nutzaps 
 ## Requirements
 
 - Python 3.12+
-- [pyenv](https://github.com/pyenv/pyenv) (optional but recommended)
+- [uv](https://docs.astral.sh/uv/)
 
 ## Setup
 
@@ -22,12 +22,8 @@ Send [NIP-61](https://github.com/nostr-protocol/nips/blob/master/61.md) nutzaps 
 git clone <repo-url>
 cd nutzap-cli
 
-# Create virtualenv (pyenv)
-pyenv virtualenv 3.12.1 dev-nutzap-cli
-pyenv local dev-nutzap-cli
-
-# Install dependencies
-pip install -r requirements.txt
+# Create virtualenv and install dependencies
+uv sync
 ```
 
 ### Generate a sender keypair
@@ -133,7 +129,7 @@ nutzap-cli/
 ├── nostr.py         # Key handling, event build/sign/publish, NIP-42 AUTH
 ├── cashu_utils.py   # Token decode (v3/v4), mint keyset lookup, P2PK swap
 ├── resolver.py      # kind:10019 relay fetch with fallback
-├── requirements.txt
+├── pyproject.toml
 ├── LICENSE
 └── README.md
 ```
